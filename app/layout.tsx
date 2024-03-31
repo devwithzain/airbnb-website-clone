@@ -1,17 +1,45 @@
 import "@/styles/globals.css";
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-	title: "Airbnb",
+import { Nunito } from "next/font/google";
+import {
+	Navbar,
+	LoginModal,
+	RegisterModal,
+	RentModal,
+	ToasterProvider,
+	ClientOnly,
+	getCurrentUser,
+	SearchModal,
+} from "@/export";
+
+export const metadata = {
+	title: "Airbnb | Vacation rentals, cabins ,beach houses & more",
 	description: "Airbnb Clone",
 };
-export default function RootLayout({
+
+const font = Nunito({
+	subsets: ["latin"],
+});
+
+export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	const currentUser = await getCurrentUser();
+
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className={font.className}>
+				<ClientOnly>
+					<ToasterProvider />
+					<LoginModal />
+					<RegisterModal />
+					<SearchModal />
+					<RentModal />
+					<Navbar currentUser={currentUser} />
+				</ClientOnly>
+				<div className="pt-28">{children}</div>
+			</body>
 		</html>
 	);
 }
