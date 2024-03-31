@@ -2,6 +2,7 @@ import { authOptions, prisma } from "@/export";
 import { getServerSession } from "next-auth/next";
 
 export async function getSession() {
+  // @ts-ignore
   return await getServerSession(authOptions);
 }
 
