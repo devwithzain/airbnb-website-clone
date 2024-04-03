@@ -1,5 +1,5 @@
 "use client";
-import { LoginModal, RegisterModal, RentModal, SearchModal } from "@/export";
+import { LoginModal, RegisterModal, RentModal, SearchModal } from "@/app";
 
 export default function ModalsProvider() {
 	return (

@@ -1,4 +1,4 @@
-import { getCurrentUser, prisma } from "@/export";
+import { getCurrentUser, prisma } from "@/app";
 
 export default async function getFavoriteListings() {
   try {

@@ -1,4 +1,4 @@
-import { THeadingProps } from "@/export";
+import { THeadingProps } from "@/app";
 
 export default function Heading({ title, subtitle, center }: THeadingProps) {
 	return (

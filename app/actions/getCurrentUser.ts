@@ -1,4 +1,4 @@
-import { authOptions, prisma } from "@/export";
+import { authOptions, prisma } from "@/app";
 import { getServerSession } from "next-auth/next";
 
 export async function getSession() {

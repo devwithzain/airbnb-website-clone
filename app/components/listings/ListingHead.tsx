@@ -1,11 +1,6 @@
 "use client";
 import Image from "next/image";
-import {
-	TListingHeadProps,
-	useCountries,
-	Heading,
-	HeartButton,
-} from "@/export";
+import { TListingHeadProps, useCountries, Heading, HeartButton } from "@/app";
 
 export default function ListingHead({
 	title,

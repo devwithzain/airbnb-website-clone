@@ -1,10 +1,5 @@
 import TripsClient from "./ReservationsClient";
-import {
-	EmptyState,
-	ClientOnly,
-	getCurrentUser,
-	getReservations,
-} from "@/export";
+import { EmptyState, ClientOnly, getCurrentUser, getReservations } from "@/app";
 
 export default async function ReservationsPage() {
 	const currentUser = await getCurrentUser();

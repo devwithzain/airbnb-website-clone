@@ -1,4 +1,4 @@
-import { TListingsProps, prisma } from "@/export";
+import { TListingsProps, prisma } from "@/app";
 
 export default async function getListings(
   params: TListingsProps

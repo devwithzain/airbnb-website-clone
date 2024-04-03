@@ -171,6 +171,11 @@ export const footerLinks = [
 
 export const categories = [
    {
+      label: "Trending",
+      src: trending,
+      description: "This property is brand new and trending!",
+   },
+   {
       label: "Arctic",
       src: arctic,
       description: "This property is close to the snow!",
@@ -464,10 +469,5 @@ export const categories = [
       label: "Aframes",
       src: aframes,
       description: "This property is in a aframes!",
-   },
-   {
-      label: "Trending",
-      src: trending,
-      description: "This property is brand new and trending!",
    },
 ];

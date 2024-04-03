@@ -3,7 +3,7 @@ import {
 	ClientOnly,
 	getCurrentUser,
 	getFavoriteListings,
-} from "@/export";
+} from "@/app";
 import FavoritesClient from "./FavoritesClient";
 
 export default async function ListingPage() {

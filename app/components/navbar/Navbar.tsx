@@ -5,7 +5,7 @@ import {
 	Search,
 	UserMenu,
 	TNavbarProps,
-} from "@/export";
+} from "@/app";
 
 export default function Navbar({ currentUser }: TNavbarProps) {
 	return (

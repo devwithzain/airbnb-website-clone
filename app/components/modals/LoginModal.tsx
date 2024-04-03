@@ -13,7 +13,7 @@ import {
 	Input,
 	Heading,
 	Button,
-} from "@/export";
+} from "@/app";
 
 export default function LoginModal() {
 	const router = useRouter();

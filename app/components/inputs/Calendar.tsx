@@ -1,6 +1,6 @@
 "use client";
 import "react-date-range/dist/styles.css";
-import { TDatePickerProps } from "@/export";
+import { TDatePickerProps } from "@/app";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/theme/default.css";
 

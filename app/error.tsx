@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { EmptyState, TErrorStateProps } from "@/export";
+import { EmptyState, TErrorStateProps } from "@/app";
 
 export default function ErrorState({ error }: TErrorStateProps) {
 	useEffect(() => {

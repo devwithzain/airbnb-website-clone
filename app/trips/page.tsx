@@ -1,9 +1,4 @@
-import {
-	EmptyState,
-	ClientOnly,
-	getCurrentUser,
-	getReservations,
-} from "@/export";
+import { EmptyState, ClientOnly, getCurrentUser, getReservations } from "@/app";
 import TripsClient from "./TripsClient";
 
 export default async function TripsPage() {

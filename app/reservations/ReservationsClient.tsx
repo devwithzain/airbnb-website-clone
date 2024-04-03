@@ -8,7 +8,7 @@ import {
 	Container,
 	ListingCard,
 	TReservationsClientProps,
-} from "@/export";
+} from "@/app";
 
 export default function ReservationsClient({
 	reservations,

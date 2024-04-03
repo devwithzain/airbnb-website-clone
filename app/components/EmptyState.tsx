@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { Button, Heading, TEmptyStateProps } from "@/export";
+import { Button, Heading, TEmptyStateProps } from "@/app";
 
 export default function EmptyState({
 	title = "No exact matches",

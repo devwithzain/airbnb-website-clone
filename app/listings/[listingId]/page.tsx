@@ -5,7 +5,7 @@ import {
 	ClientOnly,
 	EmptyState,
 	TListingPageProps,
-} from "@/export";
+} from "@/app";
 import ListingClient from "./ListingClient";
 
 export default async function ListingPage({

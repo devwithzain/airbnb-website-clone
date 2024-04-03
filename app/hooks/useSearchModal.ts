@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { THooksProps } from "@/export";
+import { THooksProps } from "@/app";
 
 const useSearchModal = create<THooksProps>((set) => ({
   isOpen: false,

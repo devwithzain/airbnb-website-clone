@@ -17,7 +17,7 @@ import {
 	CategoryInput,
 	CountrySelect,
 	RentModalSTEPS,
-} from "@/export";
+} from "@/app";
 
 export default function RentModal() {
 	const router = useRouter();

@@ -2,7 +2,7 @@
 import qs from "query-string";
 import Image from "next/image";
 import { useCallback } from "react";
-import { TCategoryBoxProps } from "@/export";
+import { TCategoryBoxProps } from "@/app";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function CategoryBox({

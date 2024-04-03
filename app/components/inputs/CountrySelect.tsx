@@ -1,10 +1,6 @@
 "use client";
 import Select from "react-select";
-import {
-	TCountrySelectProps,
-	useCountries,
-	TCountrySelectValue,
-} from "@/export";
+import { TCountrySelectProps, useCountries, TCountrySelectValue } from "@/app";
 
 export default function CountrySelect({
 	value,

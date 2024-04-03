@@ -9,7 +9,7 @@ import {
 	ClientOnly,
 	getCurrentUser,
 	SearchModal,
-} from "@/export";
+} from "@/app";
 
 export const metadata = {
 	title: "Airbnb | Vacation rentals, cabins ,beach houses & more",

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TAvatarProps } from "@/export";
+import { TAvatarProps } from "@/app";
 
 export default function Avatar({ src }: TAvatarProps) {
 	return (

@@ -10,7 +10,7 @@ import {
 	MenuItem,
 	Avatar,
 	TUserMenuProps,
-} from "@/export";
+} from "@/app";
 
 export default function UserMenu({ currentUser }: TUserMenuProps) {
 	const router = useRouter();

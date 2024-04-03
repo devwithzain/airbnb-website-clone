@@ -1,4 +1,4 @@
-import { TCategoryInputProps } from "@/export";
+import { TCategoryInputProps } from "@/app";
 import Image from "next/image";
 
 export default function CategoryBox({

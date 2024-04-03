@@ -1,4 +1,4 @@
-import { TGetListinByIdProps, prisma } from "@/export";
+import { TGetListinByIdProps, prisma } from "@/app";
 
 export default async function getListingById(
   params: TGetListinByIdProps

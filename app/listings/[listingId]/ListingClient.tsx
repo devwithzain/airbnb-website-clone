@@ -12,7 +12,7 @@ import {
 	ListingHead,
 	ListingInfo,
 	ListingReservation,
-} from "@/export";
+} from "@/app";
 import { categories } from "@/constants";
 
 const initialDateRange = {

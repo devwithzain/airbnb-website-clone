@@ -1,6 +1,6 @@
 "use client";
 import { useCallback } from "react";
-import { TCounterProps } from "@/export";
+import { TCounterProps } from "@/app";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 export default function Counter({

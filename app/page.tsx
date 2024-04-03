@@ -6,7 +6,7 @@ import {
 	getListings,
 	Container,
 	THomeProps,
-} from "@/export";
+} from "@/app";
 
 export default async function App({ searchParams }: THomeProps) {
 	const listings = await getListings(searchParams);

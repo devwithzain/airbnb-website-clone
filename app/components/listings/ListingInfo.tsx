@@ -5,7 +5,7 @@ import {
 	useCountries,
 	Avatar,
 	ListingCategory,
-} from "@/export";
+} from "@/app";
 
 const Map = dynamic(() => import("../Map"), {
 	ssr: false,

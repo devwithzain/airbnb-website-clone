@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TCategoryViewProps } from "@/export";
+import { TCategoryViewProps } from "@/app";
 
 export default function CategoryView({
 	src,

@@ -14,7 +14,7 @@ import {
 	Heading,
 	TCountrySelectValue,
 	SearchModalSTEPS,
-} from "@/export";
+} from "@/app";
 
 export default function SearchModal() {
 	const router = useRouter();

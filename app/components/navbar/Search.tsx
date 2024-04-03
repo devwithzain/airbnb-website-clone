@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 import { differenceInDays } from "date-fns";
 import { useSearchParams } from "next/navigation";
-import { useSearchModal, useCountries } from "@/export";
+import { useSearchModal, useCountries } from "@/app";
 
 export default function Search() {
 	const searchModal = useSearchModal();
