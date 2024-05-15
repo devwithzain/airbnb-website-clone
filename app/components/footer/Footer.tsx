@@ -4,7 +4,7 @@ import Terms from "./Terms";
 
 export default function Footer() {
 	return (
-		<section className="bg-[#f7f7f7] mt-20">
+		<section className="bg-[#f7f7f7] mt-24">
 			{/* <Inspiration /> */}
 			<Links />
 			<Terms />
