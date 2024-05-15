@@ -2,7 +2,6 @@ import {
 	getCurrentUser,
 	getReservations,
 	getListingById,
-	ClientOnly,
 	EmptyState,
 	TListingPageProps,
 } from "@/app";
@@ -18,20 +17,14 @@ export default async function ListingPage({
 	const currentUser = await getCurrentUser();
 
 	if (!listing) {
-		return (
-			<ClientOnly>
-				<EmptyState />
-			</ClientOnly>
-		);
+		return <EmptyState />;
 	}
 
 	return (
-		<ClientOnly>
-			<ListingClient
-				listing={listing}
-				reservations={reservations}
-				currentUser={currentUser}
-			/>
-		</ClientOnly>
+		<ListingClient
+			listing={listing}
+			reservations={reservations}
+			currentUser={currentUser}
+		/>
 	);
 }

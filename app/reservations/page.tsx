@@ -1,17 +1,15 @@
 import TripsClient from "./ReservationsClient";
-import { EmptyState, ClientOnly, getCurrentUser, getReservations } from "@/app";
+import { EmptyState, getCurrentUser, getReservations } from "@/app";
 
 export default async function ReservationsPage() {
 	const currentUser = await getCurrentUser();
 
 	if (!currentUser) {
 		return (
-			<ClientOnly>
-				<EmptyState
-					title="Unauthorized"
-					subtitle="Please login"
-				/>
-			</ClientOnly>
+			<EmptyState
+				title="Unauthorized"
+				subtitle="Please login"
+			/>
 		);
 	}
 
@@ -19,21 +17,17 @@ export default async function ReservationsPage() {
 
 	if (reservations.length === 0) {
 		return (
-			<ClientOnly>
-				<EmptyState
-					title="No reservations found"
-					subtitle="Looks like you have no reservations on your properties."
-				/>
-			</ClientOnly>
+			<EmptyState
+				title="No reservations found"
+				subtitle="Looks like you have no reservations on your properties."
+			/>
 		);
 	}
 
 	return (
-		<ClientOnly>
-			<TripsClient
-				reservations={reservations}
-				currentUser={currentUser}
-			/>
-		</ClientOnly>
+		<TripsClient
+			reservations={reservations}
+			currentUser={currentUser}
+		/>
 	);
 }

@@ -61,3 +61,8 @@ export { default as vineyards } from './vineyards.jpeg';
 export { default as yurts } from './yurts.jpeg';
 export { default as shepherdshuts } from './shepherdshuts.jpeg';
 export { default as chefskicthens } from './chefskicthens.jpeg';
+export { default as instagram } from './instagram.svg';
+export { default as language } from './language.svg';
+export { default as privacy } from './privacy.svg';
+export { default as facebook } from './facebook.svg';
+export { default as twitter } from './twitter.svg';

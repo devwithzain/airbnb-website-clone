@@ -1,9 +1,9 @@
 // exported differents components types
 import { IconType } from "react-icons";
+import { StaticImageData } from "next/image";
 import { Range, RangeKeyDict } from "react-date-range";
 import { Listing, Reservation, User } from "@prisma/client";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
-import { StaticImageData } from "next/image";
 
 export type SafeListing = Omit<Listing, "createdAt"> & {
    createdAt: string;
@@ -200,7 +200,6 @@ export enum SearchModalSTEPS {
    INFO = 2,
 }
 
-
 export type TMenuItemProps = {
    onClick: () => void;
    label: string;
@@ -289,9 +288,7 @@ export type THooksProps = {
 export { default as getCurrentUser } from '../app/actions/getCurrentUser';
 export { default as getListings } from '../app/actions/getListings';
 export { default as Container } from '../app/components/Container';
-// export { default as ListingCard } from '../app/components/listings/ListingCard';
 export { default as EmptyState } from '../app/components/EmptyState';
-export { default as ClientOnly } from '../app/components/ClientOnly';
 export { default as Loader } from '../app/components/Loader';
 export { default as Navbar } from '../app/components/navbar/Navbar';
 export { default as LoginModal } from '../app/components/modals/LoginModal';
@@ -332,3 +329,4 @@ export { default as getReservations } from '../app/actions/getReservations';
 export { default as ListingCard } from '../app/components/listings/ListingCard';
 export { default as authOptions } from '../app/libs/prismadb';
 export { default as prisma } from "../app/libs/prismadb";
+export { default as Footer } from './components/footer/Footer';

@@ -1,24 +1,24 @@
-import "@/styles/globals.css";
-import { Nunito } from "next/font/google";
 import {
 	Navbar,
 	LoginModal,
 	RegisterModal,
 	RentModal,
 	ToasterProvider,
-	ClientOnly,
 	getCurrentUser,
 	SearchModal,
+	Footer,
 } from "@/app";
-
-export const metadata = {
-	title: "Airbnb | Vacation rentals, cabins ,beach houses & more",
-	description: "Airbnb Clone",
-};
+import "@/styles/globals.css";
+import { Nunito } from "next/font/google";
 
 const font = Nunito({
 	subsets: ["latin"],
 });
+
+export const metadata = {
+	title: "Airbnb | Vacation rentals, cabins ,beach houses & more",
+	description: "Airbnb website Clone By Zain Ali",
+};
 
 export default async function RootLayout({
 	children,
@@ -30,15 +30,16 @@ export default async function RootLayout({
 	return (
 		<html lang="en">
 			<body className={font.className}>
-				<ClientOnly>
-					<ToasterProvider />
-					<LoginModal />
-					<RegisterModal />
-					<SearchModal />
-					<RentModal />
-					<Navbar currentUser={currentUser} />
-				</ClientOnly>
-				<div className="pt-28">{children}</div>
+				<ToasterProvider />
+				<LoginModal />
+				<RegisterModal />
+				<SearchModal />
+				<RentModal />
+				<Navbar currentUser={currentUser} />
+				<div className="pt-28">
+					{children}
+					<Footer />
+				</div>
 			</body>
 		</html>
 	);

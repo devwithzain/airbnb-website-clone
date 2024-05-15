@@ -17,7 +17,7 @@ export default function Links() {
 						{item.links.map((item) => (
 							<div key={item.id}>
 								<Link
-									className="text-[15px] font-normal tracking-wide hover:underline"
+									className="text-[15px] font-normal hover:underline"
 									href={"/"}>
 									{item.title}
 								</Link>

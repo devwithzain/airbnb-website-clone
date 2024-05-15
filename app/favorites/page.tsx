@@ -1,10 +1,5 @@
-import {
-	EmptyState,
-	ClientOnly,
-	getCurrentUser,
-	getFavoriteListings,
-} from "@/app";
 import FavoritesClient from "./FavoritesClient";
+import { EmptyState, getCurrentUser, getFavoriteListings } from "@/app";
 
 export default async function ListingPage() {
 	const listings = await getFavoriteListings();
@@ -12,21 +7,17 @@ export default async function ListingPage() {
 
 	if (listings.length === 0) {
 		return (
-			<ClientOnly>
-				<EmptyState
-					title="No favorites found"
-					subtitle="Looks like you have no favorite listings."
-				/>
-			</ClientOnly>
+			<EmptyState
+				title="No favorites found"
+				subtitle="Looks like you have no favorite listings."
+			/>
 		);
 	}
 
 	return (
-		<ClientOnly>
-			<FavoritesClient
-				listings={listings}
-				currentUser={currentUser}
-			/>
-		</ClientOnly>
+		<FavoritesClient
+			listings={listings}
+			currentUser={currentUser}
+		/>
 	);
 }
