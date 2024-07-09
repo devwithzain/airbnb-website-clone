@@ -10,6 +10,7 @@ import {
 } from "@/app";
 import "@/styles/globals.css";
 import { Nunito } from "next/font/google";
+import { Suspense } from "react";
 
 const font = Nunito({
 	subsets: ["latin"],
@@ -33,7 +34,9 @@ export default async function RootLayout({
 				<ToasterProvider />
 				<LoginModal />
 				<RegisterModal />
-				<SearchModal />
+				<Suspense>
+					<SearchModal />
+				</Suspense>
 				<RentModal />
 				<Navbar currentUser={currentUser} />
 				<div className="pt-28">

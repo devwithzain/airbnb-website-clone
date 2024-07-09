@@ -2,6 +2,7 @@
 import { categories } from "@/constants";
 import { CategoryBox, Container } from "@/app";
 import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export default function Categories() {
 	const params = useSearchParams();
@@ -26,12 +27,13 @@ export default function Categories() {
 			 gap-3
         ">
 				{categories.map((item) => (
-					<CategoryBox
-						key={item.label}
-						label={item.label}
-						src={item.src}
-						selected={category === item.label}
-					/>
+					<Suspense key={item.label}>
+						<CategoryBox
+							label={item.label}
+							src={item.src}
+							selected={category === item.label}
+						/>
+					</Suspense>
 				))}
 			</div>
 		</Container>

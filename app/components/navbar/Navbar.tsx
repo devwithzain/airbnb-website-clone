@@ -6,6 +6,7 @@ import {
 	UserMenu,
 	TNavbarProps,
 } from "@/app";
+import { Suspense } from "react";
 
 export default function Navbar({ currentUser }: TNavbarProps) {
 	return (
@@ -26,12 +27,16 @@ export default function Navbar({ currentUser }: TNavbarProps) {
             md:gap-0
           ">
 						<Logo />
-						<Search />
+						<Suspense>
+							<Search />
+						</Suspense>
 						<UserMenu currentUser={currentUser} />
 					</div>
 				</Container>
 			</div>
-			<Categories />
+			<Suspense>
+				<Categories />
+			</Suspense>
 		</div>
 	);
 }
