@@ -20,7 +20,7 @@ export default function ImageUpload({ onChange, value }: TImageUploadProps) {
 	return (
 		<CldUploadWidget
 			onSuccess={handleUpload}
-			uploadPreset="ppjkudj6"
+			uploadPreset="jdz0tunu"
 			options={{
 				maxFiles: 1,
 			}}>
