@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { THooksProps } from "@/app";
+import { THooksProps } from "@/types";
 
 const useRentModal = create<THooksProps>((set) => ({
   isOpen: false,

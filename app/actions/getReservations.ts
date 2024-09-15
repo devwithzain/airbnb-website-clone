@@ -1,4 +1,5 @@
-import { TGetReservationsIProps, prisma } from "@/app";
+import { prisma } from "@/app/libs/prismadb";
+import { TGetReservationsIProps } from "@/types";
 
 export default async function getReservations(
   params: TGetReservationsIProps

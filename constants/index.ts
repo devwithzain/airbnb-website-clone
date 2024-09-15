@@ -108,7 +108,7 @@ export const footerLinks = [
             title: "Gift cards"
          },
          {
-            id: 5,
+            id: 6,
             link: '/',
             title: "Airbnb.org emergency stays"
          },

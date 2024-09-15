@@ -1,4 +1,5 @@
-import { TListingsProps, prisma } from "@/app";
+import { TListingsProps } from "@/types";
+import { prisma } from "@/app/libs/prismadb";
 
 export default async function getListings(
   params: TListingsProps

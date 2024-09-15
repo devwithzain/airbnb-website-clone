@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { TIUseFavorite } from "@/app";
+import { TIUseFavorite } from "@/types";
 import useLoginModal from "./useLoginModal";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
