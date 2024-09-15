@@ -2,7 +2,7 @@
 import qs from "query-string";
 import Image from "next/image";
 import { useCallback } from "react";
-import { TCategoryBoxProps } from "@/app";
+import { TCategoryBoxProps } from "@/types";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function CategoryBox({
@@ -65,6 +65,7 @@ export default function CategoryBox({
 				src={src}
 				width={24}
 				height={24}
+				sizes="24px"
 				alt="Category"
 			/>
 			<div className="font-medium text-xs">{label}</div>

@@ -3,14 +3,14 @@ import {
 	LoginModal,
 	RegisterModal,
 	RentModal,
-	ToasterProvider,
-	getCurrentUser,
 	SearchModal,
 	Footer,
-} from "@/app";
+} from "@/app/components";
 import "@/styles/globals.css";
-import { Nunito } from "next/font/google";
 import { Suspense } from "react";
+import { Nunito } from "next/font/google";
+import { getCurrentUser } from "@/app/actions";
+import { ToasterProvider } from "@/app/providers";
 
 const font = Nunito({
 	subsets: ["latin"],

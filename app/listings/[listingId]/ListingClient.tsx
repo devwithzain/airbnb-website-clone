@@ -6,14 +6,14 @@ import { useRouter } from "next/navigation";
 import { differenceInDays, eachDayOfInterval } from "date-fns";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
-	useLoginModal,
-	TListingClientProps,
 	Container,
 	ListingHead,
 	ListingInfo,
 	ListingReservation,
-} from "@/app";
+} from "@/app/components";
 import { categories } from "@/constants";
+import { useLoginModal } from "@/app/hooks";
+import { TListingClientProps } from "@/types";
 
 const initialDateRange = {
 	startDate: new Date(),
@@ -26,8 +26,8 @@ export default function ListingClient({
 	reservations = [],
 	currentUser,
 }: TListingClientProps) {
-	const loginModal = useLoginModal();
 	const router = useRouter();
+	const loginModal = useLoginModal();
 
 	const disabledDates = useMemo(() => {
 		let dates: Date[] = [];

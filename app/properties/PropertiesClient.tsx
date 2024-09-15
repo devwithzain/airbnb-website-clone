@@ -3,7 +3,8 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
-import { TPropertiesClientProps, ListingCard, Container, Heading } from "@/app";
+import { TPropertiesClientProps } from "@/types";
+import { ListingCard, Container, Heading } from "@/app/components";
 
 export default function PropertiesClient({
 	listings,

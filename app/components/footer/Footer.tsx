@@ -1,4 +1,3 @@
-import Inspiration from "./Inspiration";
 import Links from "./Links";
 import Terms from "./Terms";
 

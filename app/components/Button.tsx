@@ -1,4 +1,4 @@
-import { TButtonProps } from "@/app";
+import { TButtonProps } from "@/types";
 
 export default function Button({
 	label,

@@ -37,6 +37,7 @@ export default function Terms() {
 							alt="img"
 							width={25}
 							height={25}
+							sizes="25px"
 						/>
 					</div>
 				</div>
@@ -49,6 +50,7 @@ export default function Terms() {
 							alt="img"
 							width={20}
 							height={20}
+							sizes="20px"
 						/>
 						<Link
 							href={"/"}
@@ -67,17 +69,20 @@ export default function Terms() {
 							alt="img"
 							width={20}
 							height={20}
+							sizes="20px"
 						/>
 						<Image
 							src={twitter}
 							alt="img"
 							width={20}
+							sizes="20px"
 							height={20}
 						/>
 						<Image
 							src={instagram}
 							alt="img"
 							width={20}
+							sizes="20px"
 							height={20}
 						/>
 					</div>

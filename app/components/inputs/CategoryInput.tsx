@@ -1,4 +1,4 @@
-import { TCategoryInputProps } from "@/app";
+import { TCategoryInputProps } from "@/types";
 import Image from "next/image";
 
 export default function CategoryBox({
@@ -27,6 +27,7 @@ export default function CategoryBox({
 				alt="icon"
 				width={30}
 				height={30}
+				sizes="30px"
 			/>
 			<div className="font-semibold">{label}</div>
 		</div>

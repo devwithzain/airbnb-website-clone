@@ -3,7 +3,9 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
-import { useCountries, HeartButton, Button, TListingCardProps } from "@/app";
+import { useCountries } from "@/app/hooks";
+import { TListingCardProps } from "@/types";
+import { HeartButton, Button } from "@/app/components";
 
 export default function ListingCard({
 	data,

@@ -1,5 +1,6 @@
 "use client";
-import { THeartButtonProps, useFavorite } from "@/app";
+import { THeartButtonProps } from "@/types";
+import useFavorite from "@/app/hooks/useFavorite";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 export default function HeartButton({

@@ -2,8 +2,9 @@
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { TTripsClientProps } from "@/types";
 import { useCallback, useState } from "react";
-import { TTripsClientProps, Heading, Container, ListingCard } from "@/app";
+import { Heading, Container, ListingCard } from "@/app/components";
 
 export default function TripsClient({
 	reservations,

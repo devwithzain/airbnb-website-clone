@@ -4,8 +4,8 @@ import {
 	Logo,
 	Search,
 	UserMenu,
-	TNavbarProps,
-} from "@/app";
+} from "@/app/components";
+import { TNavbarProps } from "@/types";
 
 export default function Navbar({ currentUser }: TNavbarProps) {
 	return (

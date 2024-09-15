@@ -1,5 +1,6 @@
 "use client";
-import { TListingReservationProps, Button, Calendar } from "@/app";
+import { TListingReservationProps } from "@/types";
+import { Button, Calendar } from "@/app/components";
 
 export default function ListingReservation({
 	price,

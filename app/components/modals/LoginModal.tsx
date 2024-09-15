@@ -1,56 +1,41 @@
 "use client";
+import { useCallback } from "react";
+import { login } from "@/app/actions";
 import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
-import { useCallback, useState } from "react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
 import { AiFillGithub } from "react-icons/ai";
-import {
-	useRegisterModal,
-	useLoginModal,
-	Modal,
-	Input,
-	Heading,
-	Button,
-} from "@/app";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { loginFormSchema, TloginFormData } from "@/types";
+import { useLoginModal, useRegisterModal } from "@/app/hooks";
+import { Modal, Input, Heading, Button } from "@/app/components";
 
 export default function LoginModal() {
 	const router = useRouter();
 	const loginModal = useLoginModal();
 	const registerModal = useRegisterModal();
-	const [isLoading, setIsLoading] = useState(false);
 
 	const {
 		register,
+		reset,
 		handleSubmit,
-		formState: { errors },
-	} = useForm<FieldValues>({
-		defaultValues: {
-			email: "",
-			password: "",
-		},
+		formState: { isSubmitting, errors },
+	} = useForm<TloginFormData>({
+		resolver: zodResolver(loginFormSchema),
 	});
 
-	const onSubmit: SubmitHandler<FieldValues> = (data) => {
-		setIsLoading(true);
-
-		signIn("credentials", {
-			...data,
-			redirect: false,
-		}).then((callback) => {
-			setIsLoading(false);
-
-			if (callback?.ok) {
-				toast.success("Logged in");
-				router.refresh();
-				loginModal.onClose();
-			}
-
-			if (callback?.error) {
-				toast.error(callback.error);
-			}
-		});
+	const onSubmits = async (data: TloginFormData) => {
+		const response = await login(data);
+		if (response?.error) {
+			toast.error(response.error);
+			reset();
+		}
+		if (response?.success) {
+			toast.success(response.success);
+			router.refresh();
+		}
 	};
 
 	const onToggle = useCallback(() => {
@@ -67,20 +52,26 @@ export default function LoginModal() {
 			<Input
 				id="email"
 				label="Email"
-				disabled={isLoading}
+				disabled={isSubmitting}
 				register={register}
 				errors={errors}
 				required
 			/>
+			{errors.email && (
+				<span className="text-red-500 text-sm">{errors.email.message}</span>
+			)}
 			<Input
 				id="password"
 				label="Password"
 				type="password"
-				disabled={isLoading}
+				disabled={isSubmitting}
 				register={register}
 				errors={errors}
 				required
 			/>
+			{errors.password && (
+				<span className="text-red-500 text-sm">{errors.password.message}</span>
+			)}
 		</div>
 	);
 
@@ -121,12 +112,12 @@ export default function LoginModal() {
 
 	return (
 		<Modal
-			disabled={isLoading}
+			disabled={isSubmitting}
 			isOpen={loginModal.isOpen}
 			title="Login"
 			actionLabel="Continue"
 			onClose={loginModal.onClose}
-			onSubmit={handleSubmit(onSubmit)}
+			onSubmit={handleSubmit(onSubmits)}
 			body={bodyContent}
 			footer={footerContent}
 		/>

@@ -1,54 +1,41 @@
 "use client";
 
-import axios from "axios";
-import { AiFillGithub } from "react-icons/ai";
+import { useCallback } from "react";
+import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
-import { useCallback, useState } from "react";
-import { toast } from "react-hot-toast";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import {
-	useLoginModal,
-	useRegisterModal,
-	Modal,
-	Input,
-	Heading,
-	Button,
-} from "@/app";
+import { useForm } from "react-hook-form";
+import { registerData } from "@/app/actions";
+import { AiFillGithub } from "react-icons/ai";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useLoginModal, useRegisterModal } from "@/app/hooks";
+import { registerFormSchema, TregisterFormData } from "@/types";
+import { Modal, Input, Heading, Button } from "@/app/components";
 
 export default function RegisterModal() {
-	const registerModal = useRegisterModal();
 	const loginModal = useLoginModal();
-	const [isLoading, setIsLoading] = useState(false);
+	const registerModal = useRegisterModal();
 
 	const {
 		register,
+		reset,
 		handleSubmit,
-		formState: { errors },
-	} = useForm<FieldValues>({
-		defaultValues: {
-			name: "",
-			email: "",
-			password: "",
-		},
+		formState: { isSubmitting, errors },
+	} = useForm<TregisterFormData>({
+		resolver: zodResolver(registerFormSchema),
 	});
 
-	const onSubmit: SubmitHandler<FieldValues> = (data) => {
-		setIsLoading(true);
-
-		axios
-			.post("/api/register", data)
-			.then(() => {
-				toast.success("Registered!");
-				registerModal.onClose();
-				loginModal.onOpen();
-			})
-			.catch((error) => {
-				toast.error(error);
-			})
-			.finally(() => {
-				setIsLoading(false);
-			});
+	const onSubmits = async (data: TregisterFormData) => {
+		const response = await registerData(data);
+		if (response.error) {
+			toast.error(response.error);
+			reset();
+		}
+		if (response.success) {
+			toast.success(response.success);
+			registerModal.onClose();
+			loginModal.onOpen();
+		}
 	};
 
 	const onToggle = useCallback(() => {
@@ -65,28 +52,37 @@ export default function RegisterModal() {
 			<Input
 				id="email"
 				label="Email"
-				disabled={isLoading}
+				disabled={isSubmitting}
 				register={register}
 				errors={errors}
 				required
 			/>
+			{errors.email && (
+				<span className="text-red-500 text-sm">{errors.email.message}</span>
+			)}
 			<Input
 				id="name"
 				label="Name"
-				disabled={isLoading}
+				disabled={isSubmitting}
 				register={register}
 				errors={errors}
 				required
 			/>
+			{errors.name && (
+				<span className="text-red-500 text-sm">{errors.name.message}</span>
+			)}
 			<Input
 				id="password"
 				label="Password"
 				type="password"
-				disabled={isLoading}
+				disabled={isSubmitting}
 				register={register}
 				errors={errors}
 				required
 			/>
+			{errors.password && (
+				<span className="text-red-500 text-sm">{errors.password.message}</span>
+			)}
 		</div>
 	);
 
@@ -121,7 +117,6 @@ export default function RegisterModal() {
               cursor-pointer 
               hover:underline
             ">
-						{" "}
 						Log in
 					</span>
 				</p>
@@ -131,12 +126,12 @@ export default function RegisterModal() {
 
 	return (
 		<Modal
-			disabled={isLoading}
+			disabled={isSubmitting}
 			isOpen={registerModal.isOpen}
 			title="Register"
 			actionLabel="Continue"
 			onClose={registerModal.onClose}
-			onSubmit={handleSubmit(onSubmit)}
+			onSubmit={handleSubmit(onSubmits)}
 			body={bodyContent}
 			footer={footerContent}
 		/>

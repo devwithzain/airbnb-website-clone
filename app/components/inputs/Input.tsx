@@ -1,5 +1,5 @@
 "use client";
-import { TInputProps } from "@/app";
+import { TInputProps } from "@/types";
 import { BiDollar } from "react-icons/bi";
 
 export default function Input({

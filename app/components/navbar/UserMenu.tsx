@@ -1,23 +1,18 @@
 "use client";
 import { signOut } from "next-auth/react";
+import { TUserMenuProps } from "@/types";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import {
-	useLoginModal,
-	useRegisterModal,
-	useRentModal,
-	MenuItem,
-	Avatar,
-	TUserMenuProps,
-} from "@/app";
+import { MenuItem, Avatar } from "@/app/components";
+import { useLoginModal, useRegisterModal, useRentModal } from "@/app/hooks";
 
 export default function UserMenu({ currentUser }: TUserMenuProps) {
 	const router = useRouter();
 
+	const rentModal = useRentModal();
 	const loginModal = useLoginModal();
 	const registerModal = useRegisterModal();
-	const rentModal = useRentModal();
 
 	const [isOpen, setIsOpen] = useState(false);
 

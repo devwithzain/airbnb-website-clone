@@ -1,20 +1,19 @@
 "use client";
 import qs from "query-string";
 import dynamic from "next/dynamic";
-import { useCallback, useMemo, useState } from "react";
-import { Range } from "react-date-range";
 import { formatISO } from "date-fns";
+import { Range } from "react-date-range";
+import { useCallback, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
-	useSearchModal,
 	Modal,
 	Calendar,
 	Counter,
 	CountrySelect,
 	Heading,
-	TCountrySelectValue,
-	SearchModalSTEPS,
-} from "@/app";
+} from "@/app/components";
+import { useSearchModal } from "@/app/hooks";
+import { SearchModalSTEPS, TCountrySelectValue } from "@/types";
 
 export default function SearchModal() {
 	const router = useRouter();

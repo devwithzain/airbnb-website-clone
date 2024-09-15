@@ -1,6 +1,7 @@
 "use client";
+import { TModalProps } from "@/types";
+import { Button } from "@/app/components";
 import { IoMdClose } from "react-icons/io";
-import { TModalProps, Button } from "@/app";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Modal({

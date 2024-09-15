@@ -7,17 +7,16 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import {
-	useRentModal,
 	Modal,
-	useCountries,
 	Heading,
 	Input,
 	Counter,
 	ImageUpload,
 	CategoryInput,
 	CountrySelect,
-	RentModalSTEPS,
-} from "@/app";
+} from "@/app/components";
+import { RentModalSTEPS } from "@/types";
+import { useRentModal } from "@/app/hooks";
 
 export default function RentModal() {
 	const router = useRouter();

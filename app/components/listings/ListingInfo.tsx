@@ -1,11 +1,8 @@
 "use client";
 import dynamic from "next/dynamic";
-import {
-	TListingInfoProps,
-	useCountries,
-	Avatar,
-	ListingCategory,
-} from "@/app";
+import { useCountries } from "@/app/hooks";
+import { TListingInfoProps } from "@/types";
+import { Avatar, ListingCategory } from "@/app/components";
 
 const Map = dynamic(() => import("../Map"), {
 	ssr: false,

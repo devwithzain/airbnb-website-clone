@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TAvatarProps } from "@/app";
+import { TAvatarProps } from "@/types";
 
 export default function Avatar({ src }: TAvatarProps) {
 	return (
@@ -7,6 +7,7 @@ export default function Avatar({ src }: TAvatarProps) {
 			className="rounded-full"
 			height="30"
 			width="30"
+			sizes="30px"
 			alt="Avatar"
 			src={src || "/placeholder.svg"}
 		/>

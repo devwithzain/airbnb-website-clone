@@ -1,11 +1,6 @@
-import {
-	getCurrentUser,
-	ListingCard,
-	EmptyState,
-	getListings,
-	Container,
-	THomeProps,
-} from "@/app";
+import { THomeProps } from "@/types";
+import { getCurrentUser, getListings } from "@/app/actions";
+import { ListingCard, EmptyState, Container } from "@/app/components";
 
 export default async function App({ searchParams }: THomeProps) {
 	const listings = await getListings(searchParams);

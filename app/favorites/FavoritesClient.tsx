@@ -1,4 +1,5 @@
-import { Heading, Container, ListingCard, TFavoritesClientProps } from "@/app";
+import { TFavoritesClientProps } from "@/types";
+import { Heading, Container, ListingCard } from "@/app/components";
 
 export default function FavoritesClient({
 	listings,

@@ -3,12 +3,8 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
-import {
-	Heading,
-	Container,
-	ListingCard,
-	TReservationsClientProps,
-} from "@/app";
+import { TReservationsClientProps } from "@/types";
+import { Heading, Container, ListingCard } from "@/app/components";
 
 export default function ReservationsClient({
 	reservations,

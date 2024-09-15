@@ -1,5 +1,6 @@
 "use client";
-import { EmptyState, TErrorStateProps } from "@/app";
+import { TErrorStateProps } from "@/types";
+import { EmptyState } from "@/app/components";
 
 export default function ErrorState({ error }: TErrorStateProps) {
 	return (
